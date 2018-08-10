@@ -1,0 +1,71 @@
+<DOCTYPE! html>
+<html lang="en-US">
+<head>
+</head>
+<script type = "text/javascript">
+  var users = 0;
+  var totalLength = 0;
+  function getData() {
+    var GET_DATA = new Array();
+
+    var strGet = window.location.search;
+    if (strGet)
+    {
+      strGet = strGet.substr(1);
+
+      var strDataPairs = strGet.split("&");
+
+      for (var i=0; i < strDataPairs.length; i++)
+      {
+        var strPair = strDataPairs[i].split("=");
+
+        var strName = strPair[0];
+        var strValue = strPair[1];
+        if (strValue != "")
+        {
+          GET_DATA.push(strValue);
+        }
+        totalLength = GET_DATA.length;
+      }
+    }
+  }
+
+  getData();
+
+  function increment() {
+    users += 1;
+    if (users < totalLength)
+    {
+      document.getElementById("i1").value = "";
+      document.getElementById("i2").value = "";
+      document.getElementById("i3").value = "";
+      document.getElementById("i4").value = "";
+    }
+    else {
+      document.getElementById("i1").value = "FINISHED";
+      document.getElementById("i2").value = "FINISHED";
+      document.getElementById("i3").value = "FINISHED";
+      document.getElementById("i4").value = "FINISHED";
+    }
+    console.log(users);
+  }
+</script>
+<body>
+  <p>Peer Review System</p>
+  <p>Responses from <br>
+    about </p>
+  <form action="/action_page.php">
+    1. This team member was helpful and courteous, comfrotable to work with.<br>
+    <textarea id ="i1" maxlength="500" name="input1"></textarea><br>
+    2. This team member was present and focused at all meetings, met deadlines, and contriuted his/her fair share of the work.<br>
+    <textarea id ="i2" maxlength="500" name="input2"></textarea><br>
+    3. The quality of this team member's work was professional.<br>
+    <textarea id = "i3" maxlength="500" name="input3"></textarea><br>
+    4. I would want this team member to be on my team again because of this expertise (Give about 5 points for each area where the team member really excelled)...<br>
+    <textarea id ="i4" maxlength="500" name="input4"></textarea><br>
+  </form>
+
+  <input type="submit" value="Next Student (or Finish)" onclick="increment();">
+
+
+</body>

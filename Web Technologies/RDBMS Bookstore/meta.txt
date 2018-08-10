@@ -1,0 +1,6 @@
+Student Name: Nick Weg
+ACU Username: njw13a
+IP Address: 150.252.118.210
+mysql Username: 'bookorama'
+mysql Password: 'bookorama123'
+DB: 'books'

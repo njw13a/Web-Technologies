@@ -1,0 +1,66 @@
+<html>
+<!-- form1 for sending post data to another JS page
+     This is subminimal code not like your programs will look
+     and is provided only to show how to send variables to
+     another html web page in javascript.  -->
+
+<body>
+<FORM name="surveyForm">
+<INPUT name="variable1"><br>
+<INPUT name="variable2"><br>
+<INPUT name="variable3"><br>
+<INPUT name="variable4"><br>
+<INPUT name="variable5"><br>
+<INPUT name="variable6"><br>
+<INPUT name="variable7"><br>
+</FORM>
+
+<SCRIPT type = "text/JavaScript">
+<!--
+//Maybe you could create a function that does the following:
+
+// Create am array to hold data from URL line
+var GET_DATA = new Array();
+
+// Get the string that follows the "?" in the window's location.
+var strGet = window.location.search;  //you have to say "window.location.search"
+if (strGet) // if there are data on the URL line ...
+{
+    // Pluck off the initial "?"
+    strGet = strGet.substr(1);
+
+    // Store the URL data in an array with the form 'name=value'.
+    // On the URL line, the & separates each name value pair
+    var strDataPairs = strGet.split("&");
+
+    console.log(strDataPairs.length);
+
+     // Extract each name and value.
+    for (var i = 0; i < strDataPairs.length; i++)
+    {
+        // So, strDataPairs[i] contains the current element...
+        // Split it at the equals sign.
+        var strPair = strDataPairs[i].split("=");
+
+        // Assign the pair to the GET_DATA array.
+        var strName = strPair[0];
+        var strValue = strPair[1];
+        GET_DATA[strName] = strValue;
+    }
+}
+
+// Finally, assign the array element value to each variable.
+if (GET_DATA["variable1"] != undefined) //i.e., if the URL line was not blank
+
+    document.forms.surveyForm.variable1.value = GET_DATA["variable1"];
+    document.forms.surveyForm.variable2.value = GET_DATA["variable2"];
+    document.forms.surveyForm.variable3.value = GET_DATA["variable3"];
+    document.forms.surveyForm.variable4.value = GET_DATA["variable4"];
+    document.forms.surveyForm.variable5.value = GET_DATA["variable5"];
+    document.forms.surveyForm.variable6.value = GET_DATA["variable6"];
+    document.forms.surveyForm.variable7.value = GET_DATA["variable7"];
+
+//-->
+</SCRIPT>
+</body>
+</html>

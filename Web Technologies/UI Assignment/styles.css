@@ -1,0 +1,12 @@
+body {
+  width: 300px;
+}
+h1 {
+  text-align: center
+}
+div.course {
+  text-align: left;
+}
+div.usernames {
+  text-align: center;
+}

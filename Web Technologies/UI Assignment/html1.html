@@ -1,0 +1,63 @@
+<DOCTYPE! html>
+<html lang="en-US">
+<script>
+
+</script>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Peer Review System</h2>
+  <p>Please enter your name and other information:</p>
+  <form action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <!--<input type="submit" value="Submit">-->
+  </form>
+  <div class="course">
+    <p>Courses
+      <select name="course">
+        <option value="" disabled selected>(pick one)</option>
+        <option value="it220">IT220</option>
+        <option value="it221">IT221</option>
+        <option value="it225">IT225</option>
+        <option value="it310">IT310</option>
+        <option value="it410">IT410</option>
+      </select>
+    </p>
+  </div>
+
+  <p>Major
+    <select name="major">
+      <option value="" disabled selected>(pick one)</option>
+      <option value="cs">CS</option>
+      <option value="det">DET</option>
+      <option value="is">IS</option>
+      <option value="it">IT</option>
+      <option value="other">Other</option>
+    </select>
+  </p>
+
+  <form action="/action_page.php">
+  Username <input type="text" name="username"><br>
+  </form>
+
+  <div class="usernames">
+    <p>ACU usernames of your teammates (max 7).<br>
+      Please type correctly. Leave extras blank.</p>
+      <form name=teamForm method="GET" action="html2.html">
+      <input type="text" name="username1"><br>
+      <input type="text" name="username2"><br>
+      <input type="text" name="username3"><br>
+      <input type="text" name="username4"><br>
+      <input type="text" name="username5"><br>
+      <input type="text" name="username6"><br>
+      <input type="text" name="username7"><br>
+   </div>
+
+    <input type="submit" value="Click to Begin Feedback">
+  </form>
+
+
+</body>

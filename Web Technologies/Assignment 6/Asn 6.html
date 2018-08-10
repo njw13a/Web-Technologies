@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+  function sendToPage() {
+    var selector = document.getElementById("selector");
+    var selected = selector.options[selector.selectedIndex].value;
+    if (selected == "fib") {
+      window.location.href = "fib.html";
+    }
+    else if (selected == "quad") {
+      window.location.href = "quad.html";
+    }
+    else if (selected == "dis") {
+      window.location.href = "dis.html";
+    }
+  }
+
+</script>
+<body>
+
+  <h1>Assignment 6</h1>
+
+  <form action="/sendToPage.js">
+    <select id="selector">
+      <option selected="default">(Choose one)</option>
+      <option value="fib">Fibonacci</option>
+      <option value="quad">Quadratic Solver</option>
+      <option value="dis">3D Distance</option>
+    </select>
+  </form>
+
+  <input type="submit" value="Select" onclick="sendToPage()">
+
+
+</body>
+</html>
